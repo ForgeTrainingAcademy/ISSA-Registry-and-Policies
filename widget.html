@@ -1,0 +1,248 @@
+<input
+  type="text"
+  id="searchName"
+  placeholder="Enter name"
+  oninput="searchCertificates()"
+>
+
+<div id="results"></div>
+
+<style>
+.person-block {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.person-block:hover {
+  transform: translateY(-3px);
+}
+
+.person-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ----- CARD CERTIFICATO ----- */
+.cert-card {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid transparent;
+  transition: background 0.2s;
+}
+
+/* ----- STATUS SEMAFORO ----- */
+.status {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.valid { background-color: #2ecc71; }
+.warning { background-color: #f1c40f; color: #000; }
+.expired { background-color: #e74c3c; }
+
+/* ----- INPUT RICERCA ----- */
+#searchName {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+</style>
+
+<script>
+  const JSON_URL = 'https://forgetrainingacademy.github.io/ISSA-Registry-and-Policies/certification.json';
+
+  let certificates = [];
+  let lastLoadedAt = 0;
+  let loadingPromise = null;
+
+  /* ---- Utility ---- */
+  function normalize(str) {
+    return String(str || '').toLowerCase().trim().replace(/\s+/g, ' ');
+  }
+
+  function setResults(html) {
+    const container = document.getElementById('results');
+    if (container) container.innerHTML = html;
+  }
+
+  function buildUrlNoCache(url) {
+    // Cache-busting: garantisce nuova richiesta anche su CDN aggressivi
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}v=${Date.now()}`;
+  }
+
+  /* ---- Caricamento dati (con no-cache) ---- */
+  async function loadCertificates({ force = false } = {}) {
+    const now = Date.now();
+
+    // Evita di rifare fetch troppo spesso (ma consente force)
+    // Qui: almeno 2 secondi tra un fetch e l'altro
+    if (!force && certificates.length && (now - lastLoadedAt) < 2000) {
+      return certificates;
+    }
+
+    // Se c'è già un fetch in corso, riusa la stessa promise
+    if (loadingPromise && !force) return loadingPromise;
+
+    loadingPromise = (async () => {
+      try {
+        const url = buildUrlNoCache(JSON_URL);
+        const res = await fetch(url, { cache: 'no-store' });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data = await res.json();
+
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid JSON format: expected an array');
+        }
+
+        certificates = data;
+        lastLoadedAt = Date.now();
+        return certificates;
+      } catch (err) {
+        console.error('Registry load error:', err);
+        setResults('Error loading registry data.');
+        certificates = [];
+        lastLoadedAt = 0;
+        return certificates;
+      } finally {
+        loadingPromise = null;
+      }
+    })();
+
+    return loadingPromise;
+  }
+
+  /* ---- Ricerca ---- */
+  async function searchCertificates() {
+    const inputEl = document.getElementById('searchName');
+    const container = document.getElementById('results');
+
+    if (!inputEl || !container) return;
+
+    const input = normalize(inputEl.value);
+    container.innerHTML = '';
+
+    if (input.length < 2) return;
+
+    // IMPORTANT: ricarica SEMPRE dati freschi prima della ricerca
+    // Se vuoi meno richieste: cambia force:true -> force:false
+    await loadCertificates({ force: true });
+
+    if (!certificates.length) {
+      container.innerHTML = 'Registry unavailable.';
+      return;
+    }
+
+    const parts = input.split(' ');
+
+    const matches = certificates.filter(item => {
+      const fullName = normalize(item.fullName);
+      if (!fullName) return false;
+      const words = fullName.split(' ');
+      return parts.every(p => words.some(w => w.startsWith(p)));
+    });
+
+    if (matches.length === 0) {
+      container.innerHTML = 'Not found';
+      return;
+    }
+
+    /* ---- GroupBy per persona ---- */
+    const grouped = matches.reduce((acc, cert) => {
+      const key = cert.fullName || 'Unknown';
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(cert);
+      return acc;
+    }, {});
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    Object.entries(grouped).forEach(([name, certs]) => {
+      let personHTML = `<div class="person-block"><div class="person-name">${name}</div>`;
+
+      certs.forEach(cert => {
+        const expiration = new Date(cert.expiryDate);
+        const diffDays = Math.floor((expiration - today) / (1000*60*60*24));
+
+        let statusClass = 'valid';
+        let statusText = 'VALID';
+
+        if (isNaN(expiration.getTime())) {
+          statusClass = 'warning';
+          statusText = 'CHECK';
+        } else if (diffDays < 0) {
+          statusClass = 'expired';
+          statusText = 'EXPIRED';
+        } else if (diffDays <= 30) {
+          statusClass = 'warning';
+          statusText = 'EXPIRING';
+        }
+
+        const borderColor =
+          statusClass === 'valid' ? '#2ecc71' :
+          statusClass === 'warning' ? '#f1c40f' :
+          '#e74c3c';
+
+        personHTML += `
+          <div class="cert-card" style="border-left: 4px solid ${borderColor}">
+            <div><strong>Certification:</strong> ${cert.certification || '-'}</div>
+            <div><strong>Certification Number:</strong> ${cert.certificationNumber || '-'}</div>
+            <div>Issue date: ${cert.issueDate || '-'}</div>
+            <div>Expiration date: ${cert.expiryDate || '-'}</div>
+                        <div><strong>Approved Center:</strong> ${cert.approvedTrainingCentre || '-'}</div>
+            <span class="status ${statusClass}">${statusText}</span>
+          </div>
+        `;
+      });
+
+      personHTML += '</div>';
+      container.innerHTML += personHTML;
+    });
+  }
+
+  /* ---- Debounce per evitare chiamate ogni tasto ---- */
+  function debounce(fn, wait = 300) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Preload (opzionale): carica subito una prima volta
+    await loadCertificates({ force: true });
+
+    // Se vuoi ricerca “live” mentre scrivi:
+    const inputEl = document.getElementById('searchName');
+    if (inputEl) {
+      inputEl.addEventListener('input', debounce(searchCertificates, 350));
+    }
+
+    // Se tu usi un bottone con onclick="searchCertificates()"
+    // esponiamo la funzione global:
+    window.searchCertificates = searchCertificates;
+
+    // Utility opzionale: refresh manuale dal console o da un bottone
+    window.refreshRegistry = () => loadCertificates({ force: true });
+  });
+</script>
