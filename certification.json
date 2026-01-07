@@ -18,42 +18,42 @@
   {
     "fullName": "James O'Connor",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2024-01-10",
-    "expiryDate": "2026-01-10",
+    "issueDate": "2025-01-10",
+    "expiryDate": "2028-01-10",
     "certificationNumber": "ISSA-300-CPO-0003",
-    "approvedTrainingCentre": "Sentinel Security Training"
+    "approvedTrainingCentre": "Forge Training Academy"
   },
   {
     "fullName": "Luca Bianchi",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2022-09-05",
-    "expiryDate": "2024-09-05",
+    "issueDate": "2025-01-10",
+    "expiryDate": "2028-01-10",
     "certificationNumber": "ISSA-300-CPO-0004",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
     "fullName": "Daniel Weiss",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2024-06-01",
-    "expiryDate": "2026-06-01",
+    "issueDate": "2025-06-01",
+    "expiryDate": "2028-01-10",
     "certificationNumber": "ISSA-300-CPO-0005",
     "approvedTrainingCentre": "European Security Institute"
   },
   {
     "fullName": "Marco De Santis",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2023-04-18",
-    "expiryDate": "2025-04-18",
-    "certificationNumber": "ISSA-300-CPO-0006",
+    "issueDate": "2024-04-18",
+    "expiryDate": "2027-01-10",
+    "certificationNumber": "ISSA-300-CPO-0031",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
     "fullName": "Thomas Müller",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2024-02-28",
-    "expiryDate": "2026-02-28",
-    "certificationNumber": "ISSA-300-CPO-0007",
-    "approvedTrainingCentre": "European Security Institute"
+    "issueDate": "2025-02-28",
+    "expiryDate": "2028-02-28",
+    "certificationNumber": "ISSA-300-CPO-0032",
+    "approvedTrainingCentre": "Forge Training Academy"
   },
   {
     "fullName": "Ryan Mitchell",
@@ -61,38 +61,133 @@
     "issueDate": "2023-07-12",
     "expiryDate": "2025-07-12",
     "certificationNumber": "ISSA-300-CPO-0008",
-    "approvedTrainingCentre": "Sentinel Security Training"
+    "approvedTrainingCentre": "Forge Training Academy"
   },
   {
-    "fullName": "Davide Conti",
+    "fullName": "Filippo La Bianca",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2024-05-06",
-    "expiryDate": "2026-05-06",
+    "issueDate": "2025-05-06",
+    "expiryDate": "2028-05-06",
     "certificationNumber": "ISSA-300-CPO-0009",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
-    "fullName": "Nathan Brooks",
+    "fullName": "Mattia Olmi",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2022-12-01",
-    "expiryDate": "2024-12-01",
-    "certificationNumber": "ISSA-300-CPO-0010",
-    "approvedTrainingCentre": "Sentinel Security Training"
+    "issueDate": "2025-09-24",
+    "expiryDate": "2028-09-24",
+    "certificationNumber": "ISSA-300-CPO-0056",
+    "approvedTrainingCentre": "Forge Training Academy"
   },
   {
     "fullName": "Michael Turner",
     "certification": "HECPO",
     "issueDate": "2024-03-15",
     "expiryDate": "2026-01-15",
-    "certificationNumber": "ISSA-400-CPO-0001",
+    "certificationNumber": "ISSA-400-CPO-0100",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
-    "fullName": "Michael Black",
+    "fullName": "Simone Rosa",
     "certification": "Close Protection Officer (CPO)",
-    "issueDate": "2024-03-15",
-    "expiryDate": "2025-03-15",
-    "certificationNumber": "ISSA-300-CPO-0003",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-300-CPO-0101",
     "approvedTrainingCentre": "Forge Training Academy"
   }
-]
+ {
+    "fullName": "Mattia Simonetta",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-400-CPO-0102",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Federico Chiellini",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-400-CPO-0103",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Gianluca Reali",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-400-CPO-0104",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Alessandro Rapiti",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-400-CPO-0105",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Dimitru Spac",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-04-15",
+    "expiryDate": "2028-04-15",
+    "certificationNumber": "ISSA-400-CPO-0106",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Fabio Kuhn",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0110",
+    "approvedTrainingCentre": "Forge Training Academy"
+  },
+  {
+    "fullName": "Matteo Bottone",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0111",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+  {
+    "fullName": "Gianluca Valent",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0112",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+  {
+    "fullName": "Yuri Cara",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0113",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+  {
+    "fullName": "Matteo Piacentini",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0114",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+  {
+    "fullName": "Simone Giovannoni",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0115",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+  {
+    "fullName": "Fabio Carru",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-400-CPO-0112",
+    "approvedTrainingCentre": "Forge Training Academy"
+   }
