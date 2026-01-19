@@ -100,7 +100,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-04-15",
     "expiryDate": "2028-04-15",
-    "certificationNumber": "ISSA-400-CPO-0102",
+    "certificationNumber": "ISSA-300-CPO-0102",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -108,7 +108,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-04-15",
     "expiryDate": "2028-04-15",
-    "certificationNumber": "ISSA-400-CPO-0103",
+    "certificationNumber": "ISSA-300-CPO-0103",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -116,7 +116,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-04-15",
     "expiryDate": "2028-04-15",
-    "certificationNumber": "ISSA-400-CPO-0104",
+    "certificationNumber": "ISSA-300-CPO-0104",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -124,7 +124,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-04-15",
     "expiryDate": "2028-04-15",
-    "certificationNumber": "ISSA-400-CPO-0105",
+    "certificationNumber": "ISSA-300-CPO-0105",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -132,7 +132,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-04-15",
     "expiryDate": "2028-04-15",
-    "certificationNumber": "ISSA-400-CPO-0106",
+    "certificationNumber": "ISSA-300-CPO-0106",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -140,7 +140,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0110",
+    "certificationNumber": "ISSA-300-CPO-0110",
     "approvedTrainingCentre": "Forge Training Academy"
   },
   {
@@ -148,7 +148,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0111",
+    "certificationNumber": "ISSA-300-CPO-0111",
     "approvedTrainingCentre": "Forge Training Academy"
    },
   {
@@ -156,7 +156,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0112",
+    "certificationNumber": "ISSA-300-CPO-0112",
     "approvedTrainingCentre": "Forge Training Academy"
    },
   {
@@ -164,7 +164,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0113",
+    "certificationNumber": "ISSA-300-CPO-0113",
     "approvedTrainingCentre": "Forge Training Academy"
    },
   {
@@ -172,7 +172,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0114",
+    "certificationNumber": "ISSA-300-CPO-0114",
     "approvedTrainingCentre": "Forge Training Academy"
    },
   {
@@ -180,7 +180,7 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0115",
+    "certificationNumber": "ISSA-300-CPO-0115",
     "approvedTrainingCentre": "Forge Training Academy"
    },
   {
@@ -188,7 +188,14 @@
     "certification": "Close Protection Officer (CPO)",
     "issueDate": "2025-09-15",
     "expiryDate": "2028-09-15",
-    "certificationNumber": "ISSA-400-CPO-0112",
+    "certificationNumber": "ISSA-300-CPO-0112",
+    "approvedTrainingCentre": "Forge Training Academy"
+   },
+{
+    "fullName": "De Finis Pastor Alessandro",
+    "certification": "Close Protection Officer (CPO)",
+    "issueDate": "2025-09-15",
+    "expiryDate": "2028-09-15",
+    "certificationNumber": "ISSA-300-CPO- 0094",
     "approvedTrainingCentre": "Forge Training Academy"
    }
-]
